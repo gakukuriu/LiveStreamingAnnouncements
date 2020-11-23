@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "pug": "2.0.4"
+  },
+  "name": "LiveStreamingAnnouncements",
+  "version": "1.0.0",
+  "description": "ライブ配信のスケジュールを投稿・管理できるアプリ",
+  "main": "index.js",
+  "repository": "https://github.com/gakukuriu/LiveStreamingAnnouncements.git",
+  "author": "gakukuriu <gakukuriu@gmail.com>",
+  "license": "MIT"
+}

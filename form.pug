@@ -1,0 +1,20 @@
+doctype html
+html(lang="jp")
+  head
+    meta(charset="UTF-8")
+    title 配信情報登録
+  body
+    h3 配信情報を入力してください
+    form(method="post" action=path)
+      p
+        span タイトル:
+        input(type="text" name="title")
+      p
+        span 開始時刻:
+        input(type="datetime-local" name="time")
+      p
+        span 配信の詳細:
+        textarea(name="description" rows="10" cols="50")
+      p
+        button(type="submit") 登録
+    a(href="/") ホームに戻る
