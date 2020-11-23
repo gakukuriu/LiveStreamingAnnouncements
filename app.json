@@ -1,0 +1,8 @@
+{
+  "name": "LiveStreamingAnnouncements",
+  "description": "The calendar for live streaming announcements",
+  "repository": "https://github.com/gakukuriu/LiveStreamingAnnouncements",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
