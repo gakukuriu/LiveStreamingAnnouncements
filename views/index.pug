@@ -6,5 +6,10 @@ html(lang="jp")
   body
     a(href="/entry") 配信情報の登録
     h3 現在配信中
+    each clv in currentLives
+      a(href=clv.address) #{clv.title} (#{clv.time}~)
+      hr
     h3 これから配信
-    
+    each nlv in nextLives
+      a(href=nlv.address) #{nlv.title} (#{nlv.time}~)
+      hr
