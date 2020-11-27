@@ -2,14 +2,48 @@ doctype html
 html(lang="jp")
   head
     meta(charset="UTF-8")
-    title ライブ配信カレンダー
-  body
-    a(href="/entry") 配信情報の登録
-    h3 現在配信中
-    each clv in currentLives
-      a(href=clv.address) #{clv.title} (#{clv.time}~)
-      hr
-    h3 これから配信
-    each nlv in nextLives
-      a(href=nlv.address) #{nlv.title} (#{nlv.time}~)
-      hr
+    link(rel="stylesheet" ,
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css",
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk",
+    crossorigin="anonymous")
+    link(rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8")
+    title trope
+  body(style="font-family: 'Jost', helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif").container
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.my-3
+      a(href="/").navbar-brand 
+        span(style="font-weight: bold") trope
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a(href="/").nav-link Home
+        li.nav-item.dropdown
+          a(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false").nav-link.dropdown-toggle Category
+          div(aria-labelledby="navbarDropdown").dropdown-menu
+            a(href="#").dropdown-item 数学
+            a(href="#").dropdown-item 経済学
+      ul.navbar-nav
+        li.nav-item
+          a(href="/entry").nav-link.btn.btn-outline-success.my-2.my-sm-0 配信情報を投稿
+    div.row
+      div.col-sm-2
+      div.col-sm-8.my-5
+        h1(style="font-weight: bold").my-5 学術系ライブ配信の情報をみんなで共有しよう
+        h3.my-3 数学、経済学、哲学、、、様々な学問についての講演が多様なプラットフォームで配信される時代です！そのような情報を集約しましょう！あなたに投稿していただいたライブ配信の情報は、きっと他の誰かの新たな学びの助けになることでしょう！
+      div.col-sm-2
+    - var currentLivesLength = currentLives.length
+    if currentLives.length
+      h4.my-3 配信中
+      ul.list-group
+        each clv in currentLives
+          li.list-group-item
+            a(href=clv.address) #{clv.title} (#{clv.timeJa})
+    h4.my-3 注目のイベント
+    ul.list-group
+      each nlv in nextLives
+        li.list-group-item
+          a(href=nlv.address) #{nlv.title} (#{nlv.timeJa})
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js",
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js",
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous")

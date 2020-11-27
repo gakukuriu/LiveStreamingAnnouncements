@@ -7,7 +7,10 @@
   "author": "gakukuriu <gakukuriu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "pug": "2.0.4"
+    "jstransformer-markdown-it": "^2.1.0",
+    "markdown-it": "^12.0.2",
+    "pug": "2.0.4",
+    "simplemde": "^1.11.2"
   },
   "engines": {
     "node": "~10"
